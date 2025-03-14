@@ -14,8 +14,7 @@ def driver():
 
 
 @pytest.fixture
-def driver_1():
-    driver = webdriver.Firefox()
+def driver_1(driver):
     driver.get(Urls.SCOOTER_HOMEPAGE_URL)
     yield driver
     driver.quit()
