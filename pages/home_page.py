@@ -16,13 +16,12 @@ class Homepage(BasePage):
 
     @allure.step('Нажать кнопку "да все привыкли" в окне "И здесь куки", если оно появилось')
     def allow_cookie(self):
-        try:
-            self.wait_clickable_of_element(self.locators.allow_cookie_button)
-            self.find_element(self.locators.allow_cookie_button)
-            self.click_on_element(self.locators.allow_cookie_button)
-            self.wait_invisibility_of_element(self.locators.allow_cookie_button)
-        except Exception:
-            pass
+
+        self.wait_clickable_of_element(self.locators.allow_cookie_button)
+        self.find_element(self.locators.allow_cookie_button)
+        self.click_on_element(self.locators.allow_cookie_button)
+        self.wait_invisibility_of_element(self.locators.allow_cookie_button)
+
 
     @allure.step('Проскроллить до нужного вопроса в блоке "Вопросы о важном" и кликнуть на вопрос')
     def select_question_from_list_0(self, locator):
