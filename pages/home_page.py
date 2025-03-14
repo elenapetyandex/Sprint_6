@@ -1,3 +1,4 @@
+import allure
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
@@ -13,6 +14,7 @@ class Homepage(BasePage):
         super().__init__(driver)
         self.locators = HomepageLocators()
 
+    @allure.step('Нажать кнопку "да все привыкли" в окне "И здесь куки", если оно появилось')
     def allow_cookie(self):
         try:
             self.wait_clickable_of_element(self.locators.allow_cookie_button)
@@ -22,17 +24,13 @@ class Homepage(BasePage):
         except Exception:
             pass
 
+    @allure.step('Проскроллить до нужного вопроса в блоке "Вопросы о важном" и кликнуть на вопрос')
+    def select_question_from_list_0(self, locator):
+        self.select_question_from_list(locator)
 
-
-
-
-    def select_question_from_list_0(self):
-        self.select_question_from_list(self.locators.question_list_0)
-
-
-    def check_visibility_answer_0(self):
-        return self.wait_visibility_of_element(self.locators.answer_text_0)
-
+    @allure.step('Дождаться видимости ответа на выбранный вопрос в блоке "Вопросы о важном"')
+    def check_visibility_answer_0(self, locator):
+        return self.wait_visibility_of_element(locator)
 
 
     def select_question_from_list_1(self):
@@ -81,17 +79,19 @@ class Homepage(BasePage):
     def check_visibility_answer_7(self):
         return self.wait_visibility_of_element(self.locators.answer_text_7)
 
+    @allure.step('Нажать кнопку "Заказать" в правом верхнем углу главной страницы')
     def upper_order_button_click(self):
         self.click_on_element(self.locators.upper_order_button)
 
+    @allure.step('Нажать кнопку "Заказать" внизу главной страницы')
     def lower_order_button_click(self):
         self.click_on_element(self.locators.lower_order_button)
 
+    @allure.step('Скролл до кнопки "Заказать" внизу главной страницы')
     def scroll_to_lower_order_button(self):
         self.scroll_to_element(self.locators.lower_order_button)
 
-
-
+    @allure.step('Кликнуть логотип "Яндекс" в левом верхнем углу главной страницы')
     def click_yandex_logo(self):
         self.click_on_element(self.locators.yandex_logo)
 
