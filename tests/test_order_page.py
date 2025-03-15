@@ -10,6 +10,7 @@ from data import Data
 
 
 class TestOrderPage:
+
     @allure.title('Выбор станции метро из списка задает значение погля равным выбранной станции')
     @pytest.mark.parametrize('station', Data.metro_station)
     def tests_select_station_set_value_in_field(self, driver, station):

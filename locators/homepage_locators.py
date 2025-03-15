@@ -10,9 +10,10 @@ class HomepageLocators:
     question_list_5 = [By.ID, 'accordion__heading-5']
     question_list_6 = [By.ID, 'accordion__heading-6']
     question_list_7 = [By.ID, 'accordion__heading-7']
+
     hidden_question_list = [By.XPATH, ".//div[@hidden='']"]
     allow_cookie_button = [By.ID, 'rcc-confirm-button']
-    answer_text_0 = [By.XPATH, ".//p[contains(text(), 'Оплата курьеру')]"]
+    answer_text_0 = [By.XPATH, ".//*[contains(text(), 'Оплата курьеру')]"]
     answer_text_1 = [By.XPATH, ".//*[contains(text(), 'Пока что у нас так')]"]
     answer_text_2 = [By.XPATH, ".//*[contains(text(), 'Допустим, вы оформляете заказ')]"]
     answer_text_3 = [By.XPATH, ".//*[contains(text(), 'Только начиная с завтрашнего дня')]"]

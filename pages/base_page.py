@@ -32,10 +32,7 @@ class BasePage:
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
 
-    def select_question_from_list(self, locator):
-        self.scroll_to_element(locator)
-        self.wait_clickable_of_element(locator)
-        self.click_on_element(locator)
+
 
 
 
@@ -64,7 +61,8 @@ class BasePage:
 
     def choose_element_by_count(self, locator, count):
         elements = self.find_elements(locator)
-        element = elements[count-1]
+        x = int(count) - 1
+        element = elements[x]
         element.click()
 
 

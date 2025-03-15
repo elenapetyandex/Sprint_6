@@ -46,7 +46,7 @@ class TestHomepage:
         homepage.wait_url(Urls.DZEN_URL)
         assert  Urls.DZEN_URL in homepage.get_current_url()
 
-п
+
 
 
 

@@ -1,8 +1,6 @@
 import pytest
 from selenium import webdriver
 
-from urls import Urls
-
 
 @pytest.fixture
 def driver():

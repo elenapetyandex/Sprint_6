@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+from helpers import Helpers
+
 
 class OrderPageLocators:
     name_field = [By.XPATH, ".//input[@placeholder='* Имя']"]  #
@@ -34,3 +36,4 @@ class OrderPageLocators:
     order_done = [By.XPATH, ".//*[text()='Заказ оформлен']"]  #
     back_button = [By.XPATH, ".//*[text()='Назад']"] #
     scooter_logo = [By.XPATH, ".//a[@class='Header_LogoScooter__3lsAR']"]
+    random_station_locator = Helpers.get_station_locator_by_station(Helpers.random_metro_station)

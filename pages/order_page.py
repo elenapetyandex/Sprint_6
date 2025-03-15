@@ -94,7 +94,7 @@ class OrderPage(BasePage):
     @allure.step('Получить значение поля "Станция метро" в форме "Для кого самокат"')
     def check_metro_station_set_up(self):
 
-        return self.get_value(self.locators.select_metro_station_field) #self.get_value(Helpers.get_element_with_of_station(station)) # проверка, что появился элемент с установленным значением станции метро
+        return self.get_value(self.locators.select_metro_station_field)  # проверка, что появился элемент с установленным значением станции метро
 
     @allure.step('Напечатать существующую станцию метро и убедиться, что соответсвующая станция доступна для клика в выпадающем списке')
     def select_metro_station_by_typing(self, station):
