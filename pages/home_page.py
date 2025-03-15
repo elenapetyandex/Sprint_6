@@ -24,59 +24,16 @@ class Homepage(BasePage):
 
 
     @allure.step('Проскроллить до нужного вопроса в блоке "Вопросы о важном" и кликнуть на вопрос')
-    def select_question_from_list_0(self, locator):
-        self.select_question_from_list(locator)
+    def select_question_from_list(self, locator):
+        self.scroll_to_element(locator)
+        self.wait_clickable_of_element(locator)
+        self.click_on_element(locator)
 
-    @allure.step('Дождаться видимости ответа на выбранный вопрос в блоке "Вопросы о важном"')
-    def check_visibility_answer_0(self, locator):
+    @allure.step('Дождаться видимости текста ответа на выбранный вопрос в блоке "Вопросы о важном"')
+    def check_visibility_answer(self, locator):
         return self.wait_visibility_of_element(locator)
 
 
-    def select_question_from_list_1(self):
-        self.select_question_from_list(self.locators.question_list_1)
-
-    def check_visibility_answer_1(self):
-        return self.wait_visibility_of_element(self.locators.answer_text_1)
-
-
-
-    def select_question_from_list_2(self):
-        self.select_question_from_list(self.locators.question_list_2)
-
-    def check_visibility_answer_2(self):
-        return self.wait_visibility_of_element(self.locators.answer_text_2)
-
-
-    def select_question_from_list_3(self):
-        self.select_question_from_list(self.locators.question_list_3)
-
-    def check_visibility_answer_3(self):
-
-        return self.wait_visibility_of_element(self.locators.answer_text_3)
-
-    def select_question_from_list_4(self):
-        self.select_question_from_list(self.locators.question_list_4)
-
-    def check_visibility_answer_4(self):
-        return self.wait_visibility_of_element(self.locators.answer_text_4)
-
-    def select_question_from_list_5(self):
-        self.select_question_from_list(self.locators.question_list_5)
-
-    def check_visibility_answer_5(self):
-        return self.wait_visibility_of_element(self.locators.answer_text_5)
-
-    def select_question_from_list_6(self):
-        self.select_question_from_list(self.locators.question_list_6)
-
-    def check_visibility_answer_6(self):
-        return self.wait_visibility_of_element(self.locators.answer_text_6)
-
-    def select_question_from_list_7(self):
-        self.select_question_from_list(self.locators.question_list_7)
-
-    def check_visibility_answer_7(self):
-        return self.wait_visibility_of_element(self.locators.answer_text_7)
 
     @allure.step('Нажать кнопку "Заказать" в правом верхнем углу главной страницы')
     def upper_order_button_click(self):
